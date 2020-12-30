@@ -1,5 +1,20 @@
 ---
 - name: Update packages
   hosts: vms
+  remote_user: root
+  
   tasks:
-    - name: apt
+    - name: Updating apt cache
+      update_cache: yes
+
+    - name: Update all packes to the latest version
+      apt:
+        name: "*"
+        state: latest
+    - name: Remove useless packages from the cache
+      apt:
+        autoclean: yes
+
+    - name: Remove dependencies that are no longer required
+      apt:
+        autoremove: yes
