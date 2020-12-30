@@ -4,13 +4,15 @@
   remote_user: root
   
   tasks:
-    - name: Updating apt cache
-      update_cache: yes
+    - name: Update the packages cache
+      apt:
+        update_cache: yes
 
     - name: Update all packes to the latest version
       apt:
         name: "*"
         state: latest
+
     - name: Remove useless packages from the cache
       apt:
         autoclean: yes
