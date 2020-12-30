@@ -1,0 +1,7 @@
+---
+- name: Update packages
+  hosts: vms
+  tasks:
+    - name: apt
+      apt:
+        
