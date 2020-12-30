@@ -3,5 +3,3 @@
   hosts: vms
   tasks:
     - name: apt
-      apt:
-        
