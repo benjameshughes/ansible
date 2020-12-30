@@ -1,6 +1,6 @@
 ---
 - name: Update packages
-  hosts: vms
+  hosts: virtualmachines
   remote_user: root
   
   tasks:
